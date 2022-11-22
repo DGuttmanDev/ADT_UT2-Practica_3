@@ -1,5 +1,7 @@
 package com.zetcode;
 
+import com.zetcode.business.service.PlayerService;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -115,7 +117,9 @@ public class Board extends JPanel implements ActionListener {
     }
 
     private void gameOver(Graphics g) {
-        
+
+        PlayerService.checkScore(dots);
+
         String msg = "Game Over";
         Font small = new Font("Helvetica", Font.BOLD, 14);
         FontMetrics metr = getFontMetrics(small);
