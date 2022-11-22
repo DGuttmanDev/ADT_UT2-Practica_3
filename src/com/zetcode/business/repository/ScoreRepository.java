@@ -29,7 +29,7 @@ public class ScoreRepository {
         try (
 
                 Connection connection = DriverManager.getConnection(properties.getProperty("db.url"));
-                PreparedStatement ps = connection.prepareStatement("SELECT * FROM puntuacion");
+                PreparedStatement ps = connection.prepareStatement("select * from puntuaciones order by puntuacion desc limit 10");
                 ResultSet rs = ps.executeQuery();
 
                 ) {
@@ -53,7 +53,8 @@ public class ScoreRepository {
         List<Player> puntuaciones = new ArrayList<>();
 
         StringBuilder query = new StringBuilder();
-        query.append("INSERT INTO puntuacion (usuario, puntuacion) VALUES ('");
+        // MODIFICAR LA QUERY PARA QUE SOLAMENTE DEVUELVA LOS 10 JUGADORES CON MAS PUNTUACION
+        query.append("INSERT INTO puntuaciones (usuario, puntuacion) VALUES ('");
         query.append(nuevoPlayer.getUser().toUpperCase());
         query.append("',");
         query.append(nuevoPlayer.getScore());
