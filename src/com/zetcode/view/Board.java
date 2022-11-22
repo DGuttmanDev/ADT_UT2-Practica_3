@@ -1,4 +1,4 @@
-package com.zetcode;
+package com.zetcode.view;
 
 import com.zetcode.business.service.PlayerService;
 
@@ -30,6 +30,7 @@ public class Board extends JPanel implements ActionListener {
     private final int y[] = new int[ALL_DOTS];
 
     private int dots;
+    private static int puntuación;
     private int apple_x;
     private int apple_y;
 
@@ -117,6 +118,8 @@ public class Board extends JPanel implements ActionListener {
     }
 
     private void gameOver(Graphics g) {
+
+        puntuación = dots;
 
         PlayerService.checkScore(dots);
 
@@ -245,5 +248,9 @@ public class Board extends JPanel implements ActionListener {
                 leftDirection = false;
             }
         }
+    }
+
+    public static int getPuntuación() {
+        return puntuación;
     }
 }

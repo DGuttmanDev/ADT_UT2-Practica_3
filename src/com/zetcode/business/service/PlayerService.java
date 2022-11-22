@@ -2,6 +2,8 @@ package com.zetcode.business.service;
 
 import com.zetcode.business.model.Player;
 import com.zetcode.business.repository.ScoreRepository;
+import com.zetcode.view.NewPlayer;
+import com.zetcode.view.Snake;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -30,6 +32,8 @@ public class PlayerService {
                 contador++;
             }
         }
+
+        Snake.savePlayer();
 
         System.out.println(GREEN+"=========="+RESET);
 
