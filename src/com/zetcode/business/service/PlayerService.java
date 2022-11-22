@@ -16,16 +16,21 @@ public class PlayerService {
     public static final String RED = "\033[0;31m";
 
     public static void checkScore(int scoreNuevo) {
+
         List<Player> players = ScoreRepository.getScore();
+
         int contador = 0;
+
         System.out.println(GREEN+"=========="+RESET);
         System.out.println(CYAN+"TOP  SCORE"+RESET);
+
         for (Player player:players){
             System.out.println(PURPLE+player.getUser()+"    "+player.getScore()+RESET);
             if(scoreNuevo > player.getScore()){
                 contador++;
             }
         }
+
         System.out.println(GREEN+"=========="+RESET);
 
         if(players.size() < 10 || contador > 10){

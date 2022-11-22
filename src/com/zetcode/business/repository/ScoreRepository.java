@@ -53,6 +53,7 @@ public class ScoreRepository {
         List<Player> puntuaciones = new ArrayList<>();
 
         StringBuilder query = new StringBuilder();
+        // MODIFICAR LA QUERY PARA QUE SOLAMENTE DEVUELVA LOS 10 JUGADORES CON MAS PUNTUACION
         query.append("INSERT INTO puntuacion (usuario, puntuacion) VALUES ('");
         query.append(nuevoPlayer.getUser().toUpperCase());
         query.append("',");
