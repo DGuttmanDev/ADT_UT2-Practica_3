@@ -17,6 +17,7 @@ public class PlayerService {
     public static final String GREEN = "\033[0;32m";
     public static final String RED = "\033[0;31m";
 
+
     public static void checkScore(int scoreNuevo) {
 
         List<Player> players = ScoreRepository.getScore();
@@ -33,6 +34,7 @@ public class PlayerService {
             }
         }
 
+        // LLAMO AL JDIALOG AQUI PARA NO TENER QUE COMPROBAR QUE ESTE ENTRE LOS 10 MEJORES
         Snake.savePlayer();
 
         System.out.println(GREEN+"=========="+RESET);

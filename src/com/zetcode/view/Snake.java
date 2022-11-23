@@ -3,7 +3,7 @@ package com.zetcode.view;
 import com.zetcode.business.model.Player;
 
 import java.awt.EventQueue;
-import javax.swing.JFrame;
+import javax.swing.*;
 
 public class Snake extends JFrame {
 
@@ -33,6 +33,7 @@ public class Snake extends JFrame {
             ex = new Snake();
             ex.setVisible(true);
         });
+
     }
 
     public static void savePlayer(){
